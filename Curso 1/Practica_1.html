@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula puntos de un equipo de fudbol</title>
+</head>
+<script>
+      function saltaLineas(){
+        document.writeln("<br>");
+        document.writeln();
+        document.writeln();
+      }
+
+      function imprime(frase){
+        document.write(frase);
+        saltaLineas();
+      }
+
+      var vitorias= parseInt (prompt("Informe la cantidad de victorias"));
+      var empates = parseInt (prompt("Inofrme la cantidad de empates"));
+      var puntosAnioPasado= 28;
+      puntosTotal = vitorias*3 + empates;
+      imprime("El total de puntos del equipo es: "+ puntosTotal);
+      saltaLineas();
+      if(puntosTotal> puntosAnioPasado){
+        imprime("el equipo esta mejor que el a;o pasado ");
+      }
+          
+      if(puntosTotal < puntosAnioPasado){
+          imprime("El equipo esta peor que el a;o pasado");}
+      if(puntosTotal== puntosAnioPasado){
+          imprime("El equipo esta igua; que el a;o pasado");}
+
+
+</script>
+<body>
+    
+</body>
+</html>

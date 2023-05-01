@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<script>
+    var anioMundial= 1930;
+    var res="";
+    for( ;anioMundial<= 2022; anioMundial+= 4){
+        res+= anioMundial + "<br>";
+    }
+
+</script>
+<body>
+    <h1>Anio de los mundiales </h1>
+    <pre>
+        <p id="res"></p>
+    </pre>
+  <script>
+    document.getElementById("res").innerHTML= res;
+  </script>  
+</body>
+</html>

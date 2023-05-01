@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="caja">
+            <h1 class="textoNav">
+                <img src="../imagenes/logo.png" alt="">
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="Barberia.html">Home</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="Contactos.html">Contactos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>       
+        
+               <div class="formulario">
+                <form action="">
+                 <label for="fullname">Nombre y apellido</label>
+                 <input type="text" id="fullname" required > <br>
+                 <label for="correo">Correo Electronico</label>
+                 <input type="email" id="correo" required placeholder="email@dominio.com"><br>
+                 <label for="telefono">Numero de Telefonos</label>
+                 <input type="tel" id="telefono" required placeholder="951-4212378">  <br>
+                 <label for="mensaje">Mensaje</label>
+                 <textarea name="" id="mensaje" ></textarea>
+<!-- ----------------------------------------------------------------------------- -->
+                 <fieldset>
+                    <legend >Como quieres contactarnos?</legend>                 
+                    <input class="line" type="radio" name="contactos" id="Cemail" value="email">
+                    <label class="line" for="Cemail">Email</label><br>
+                    <input class="line" type="radio" name="contactos" id="Ctel" value="Telefono">
+                    <label class="line" for="Ctel">Telefono</label><br>
+                    <input class="line" type="radio" name="contactos" id="Cwhats" value="Whatsapp" checked>
+                    <label class="line" for="Cwhats">WhatsApp</label> <br><br> 
+                 </fieldset>          
+                 
+                 <fieldset>
+                    <legend>En que horario prefiere ser atendido?</legend>
+                    <select name="atencion" id="horario">
+                       <option value="Temprano">Temprano</option>
+                       <option value="Medio dia">Medio dia</option>
+                       <option value="Tarde">Tarde</option>
+                    </select>
+                 </fieldset>
+                 <br><br>
+                 <input class="line" type="checkbox" name="" id="spam" checked>
+                 <label  class="line"for="spam">Le gustaria recibir novedades de la barberia por correo electronico?</label>
+                 <br>
+                 <br>
+                 <input type="button" value="Enviar" class="button">
+                </form>
+
+                <table>
+                    <tr>
+                        <th><p>Día</p></th>
+                        <th><p>Horario</p></th>
+                    </tr>
+                    <tr>
+                        <td>Lunes</td>
+                        <td>08h ~ 20h</td>
+                    </tr>
+                    <tr>
+                        <td>Miercoles</td>
+                        <td>08h ~ 20h</td>
+                    </tr>
+                    <tr>
+                        <td>Viernes</td>
+                        <td>08h ~ 20h</td>
+                    </tr>
+                </table>
+               </div>
+            
+       
+    </main>
+
+    <footer class="test" >
+        
+        <img src="../imagenes/logo-blanco.png" alt="">
+        <p class="copyright"> &copy Copyright Barberia Alura-2020 </p>
+
+    </footer>
+
+</body>
+
+</html>

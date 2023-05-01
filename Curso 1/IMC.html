@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula IMC</title>
+</head>
+<script>
+     var nombre = prompt("Cual es tu nombre?");
+     var peso = parseFloat(prompt("Cual es tu peso?"));
+     var altura = parseFloat(prompt("Cual es tu estatura?"));
+
+     var IMC= peso/ (altura*altura);
+     
+     var respuesta=nombre+ " ";
+     respuesta += IMC < 18? "Estas por debajo de tu peso ideal": ((IMC>= 18 && IMC < 25)?"Estas en tu peso ideal": ((IMC>= 25 && IMC < 30)?"Tienes sobrepeso ":"Estas obeso") );
+
+</script>
+<body>
+    <h1>Calcula tu indice de masa corporal</h1>
+    <p id="p"></p>
+    
+</body>
+<script>  
+    document.getElementById("p").innerHTML= respuesta;    
+</script>
+</html>

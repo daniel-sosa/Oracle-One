@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Orbitron&family=Rubik+Pixels&family=Tilt+Prism&display=swap');
+
+body {
+    width:960px;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+header {
+    background-color: rgb(215, 223, 223);
+    border: 100px;
+    width: 100%;
+
+}
+
+.logo {
+    width: 140px;
+
+}
+
+h2{
+    margin: 20px;
+    font-size: 2rem;
+}
+
+.textoNav {
+    font-size: .8em;
+}
+
+nav {
+    width: 100%;
+    display: inline;
+    position: absolute;
+    top: 100px;
+    left: 40%;
+}
+
+nav ul {
+    width: 100%;
+    display: inline;
+    position: absolute;
+}
+
+nav a:hover {
+    color: darkgoldenrod;
+    text-decoration: underline;
+}
+
+nav a {
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+nav li {
+    display: inline;
+    margin: 0 0 0 15px;
+    width: 150px;
+}
+
+
+.caja {
+    width: 940px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.productos {
+    width: 940px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.productos li {
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    /* background-color: beige; */
+    margin: 0 1.5%;
+    padding: 30px 10px 30px 20px;
+    box-sizing: border-box;
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 10px;
+
+}
+
+.productos li:hover {
+    border-color: darkgoldenrod;
+}
+
+.productos li:active {
+    border-color: rgb(174, 190, 109);
+}
+
+.productos li:hover h2 {
+    font-size: 32px;
+}
+
+.productos::before {
+    border-color: rgb(240, 213, 62);
+}
+
+.productos h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.productos .descripcion {
+    font-size: 18px;
+
+}
+
+.productos .precio {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    background: url('../imagenes/bg.jpg');
+    width: 100%;
+    /* padding: 40px; */
+}
+
+footer p {
+    color: aliceblue;
+    margin-top: 10px;
+}
+
+/* ---------------------------- Contactos ----------------------------------------- */
+
+main {
+    width: 100%;
+    margin: 0;
+    display: inline-block;
+}
+
+form {
+    margin: 40px;
+}
+
+form label {
+    font-size: 23px;
+    margin: 0 0 1 10px;
+    display: block;
+
+}
+
+form input {
+    display: block;
+    margin: 10px 0 20px 0;
+    padding: 10px 25px;
+    width: 50%;
+}
+
+textarea {
+    width: 50%;
+    height: 100px;
+    margin-bottom: 30px;
+}
+
+.line {
+    display: inline;
+    margin: 0;
+    width: 20px;
+}
+
+select {
+    margin-top: 10px;
+    width: 20%;
+    height: 30px;
+}
+
+.button {
+    background-color: rgb(246, 184, 41);
+    font-size: 25px;
+    color: aliceblue;
+    font-weight: bold;
+    border-color: rgb(205, 146, 9);
+    ;
+}
+
+.button:hover {
+    transform: scale(1.1) rotate(1deg);
+    transition: 3s;
+}
+
+table {
+    margin: 10px 0 100px 100px;
+}
+
+th,
+td {
+    width: 80px;
+    border-style: solid;
+    border-width: .5px;
+}
+
+th {
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+    background-color: rgb(113, 111, 111);
+}
+
+th p {
+    color: aliceblue;
+}
+
+td {
+    padding: 5px 0 5px 20px;
+}
+
+.formulario {
+    margin-left: 20%;
+}
+
+/* ##############################INDEX################################################## */
+
+
+
+h1 {
+    margin: .5em, 1em, .5em, 1em;
+}
+
+.items {
+    font-style: italic;
+}
+
+
+h2 {
+    text-align: center;
+}
+
+ul {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    margin-right: 8%;
+
+}
+
+.tituloPrincipal {
+    background-color: azure;
+    padding: 20px;
+}
+
+main h1 {
+
+    text-align: center;
+    font-weight: bolder;
+    margin: 40px;
+    text-transform: uppercase;
+}
+
+/* CSS para home */
+.banner {
+    width: 100%;
+}
+
+.diferenciales {
+    display: inline-block;
+    border-left: 20px;
+    width: 100%;
+    background: linear-gradient(#888888 , #555454);
+    /* background-color: red; */
+}
+
+.diferenciales img {
+    
+    width: 45%;    
+    height: 35%;
+   
+}
+.diferenciales img:hover{
+    opacity: 0.5;
+    transition: .5s;
+    box-shadow: 10px 10px  50px 25px black ; 
+}
+
+.contenido_diferenciales {
+    
+    margin-left: 20%;
+    margin-bottom: 30px;
+}
+
+.diferenciales h2 {
+    margin: 50px 0 0 0;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+.diferenciales ul{
+    display: inline-block  ;
+    /* background-color: blue; */
+
+   
+    
+}
+.items{
+    line-height: 1.5;
+     /* margin: 5px 0; */
+     
+}
+.items:before{
+    content: "☆";
+ };
+
+.items:first-child{
+    font-weight: bold;
+}
+
+.principal {
+    background-color:#fefefe ;
+    padding: 20px;
+    margin: 0 0 1rem;
+    display: inline-block;
+}
+
+.principal p {
+    margin: 0 0 1rem;
+
+}
+
+.principal img {
+    width: 15%;
+    float: left;
+    margin: 0 25px;
+
+
+}
+
+
+.mapa{
+    text-align: center;
+    
+    width: 100%;
+    background: linear-gradient(#fefefe,#888888);
+}
+.mapa h2{
+    margin: 20px;
+    font-size: 2rem;
+}
+.video{
+    text-align: center;
+    padding-bottom: 60px;
+    background: linear-gradient( #555454, #3c3b3b);
+    
+}
+
+
+@media screen and (max-width:670px){
+    body{
+        background-color: red;
+        
+    }
+
+   
+
+
+} 

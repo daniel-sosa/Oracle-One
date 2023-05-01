@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SegurityChat</title>
+    <style>
+        .wrapper {
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+        }
+
+        .columna {
+            background-color: rgb(213, 219, 232);
+            height: 500px;
+        }
+
+        textarea {
+            border: 2px solid rgb(7, 94, 83);
+            margin-top: 70px;
+            margin-bottom: 70px;
+            margin-right: 70px;
+            margin-left: 70px;
+            background-color: rgb(225, 227, 228);
+
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 16px 80px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .buttonOn {
+            background-color: #008CBA;
+            color: white;
+            border: 2px solid #4CAF50;
+        }
+
+        .buttonOn:hover {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div>
+        <center>
+            <h1>Chat Seguro</h1>
+        </center>
+    </div>
+
+    <div class="wrapper">
+
+
+        <div class="columna">
+            <textarea name="" id="mensaje_a_cifrar" cols="80%" rows="25%"></textarea>
+        </div>
+        <div class="columna">
+            <textarea name="" id="mesaje_cifrado" cols="80%" rows="25%"></textarea>
+        </div>
+        <div style="height: 120px; background-color: rgb(122, 184, 213); ">
+            <br>
+            <center>
+                <button class="button buttonOn" onclick="cifra()">
+                    Cifrar Mensaje
+                </button>
+            </center>
+        </div>
+        <div style="height: 120px; background-color:  rgb(122, 184, 213)">
+            <br>
+            <center>
+                <button class="button buttonOn" onclick="descifra()">
+                    Copiar
+                </button>
+            </center>
+        </div>
+    </div>
+</body>
+
+
+
+</html><script>
+    //var mensajeA= document.getElementById("mensaje_a_cifrar");
+    var mensajeB = "";
+    var mensajeA = "";
+    var aux="";
+    function cifra() {
+        document.getElementById("mesaje_cifrado").innerHTML="";
+        mensajeB="";
+        mensajeA = document.getElementById("mensaje_a_cifrar").value;
+        var i =0;
+
+        do{
+            aux = mensajeA[i];
+
+            switch (aux) {
+                case 'a': mensajeB +="ai"; break;
+                case 'e': mensajeB +="enter"; break;
+                case 'i': mensajeB += "imes"; break;
+                case 'o': mensajeB += "ober"; break;
+                case 'u': mensajeB += "ufat"; break;
+                default: mensajeB += aux; break;
+            }
+            document.getElementById("mesaje_cifrado").innerHTML= mensajeB;
+            i++;
+        }while(i < mensajeA.length);     
+
+    }
+
+    function descifra(){
+
+        mensajeB="";
+        mensajeB = document.getElementById("mesaje_cifrado").value;
+        mensajeB= mensajeB.replaceAll("ai","a");
+        mensajeB= mensajeB.replaceAll("enter","e");
+        mensajeB= mensajeB.replaceAll("imes","i");
+        mensajeB= mensajeB.replaceAll("ober","o");
+        mensajeB= mensajeB.replaceAll("ufat","u");
+        alert(mensajeB);
+    }
+
+</script>

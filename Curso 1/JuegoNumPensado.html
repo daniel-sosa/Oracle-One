@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numero pensado</title>   
+</head>
+<script>
+    var numeroIntentos= 3;
+    var numero= Math.round(Math.random()*10);
+    var res="";
+    for(var i=1 ; i<= numeroIntentos;i++){
+        var numeroPensado= parseInt(prompt("oportunidad "+ i +"Ingresa el numero pensado"));
+        res= (numero== numeroPensado)? ("Usted acerto") : ("No acerto el numero era "+ numero);
+        if(res== "Usted acerto") i= numeroIntentos+=1;
+    }
+    
+    //document.getElementById("res").innerHTML = (numero== numeroPensado)? ("Usted aserto") : ("No acerto el numero era "+ numero);
+
+</script>
+<body>
+    <h1>Numero pensado</h1>
+    <p id="res"></p>
+    <script>
+          document.getElementById("res").innerHTML = res;
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <canvas height="400" width="600"></canvas>
+
+</body>
+<script>
+
+
+
+    class Coordenada {
+
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+
+    }
+    class Rectangulo {
+
+        constructor(inicioX, inicioY, anchoX, altoY, color) {
+            this.inicioX = inicioX;
+            this.inicioY = inicioY;
+            this.anchoX = anchoX;
+            this.altoY = altoY;
+            this.color = color;
+        }
+
+        getCoordenada(num) {
+
+            switch (num) {
+                case 1: return new Coordenada(this.inicioX, this.inicioY); break;
+                case 2: return new Coordenada((this.inicioX + this.anchoX), this.inicioY); break;
+                case 3: return new Coordenada((this.inicioX + this.anchoX), (this.inicioY + this.altoY)); break;
+                case 4: return new Coordenada(this.inicioX, (this.inicioY + this.altoY)); break;
+            }
+            return new Coordenada(-1, -1);
+        }
+        draw() {
+            pincel.fillStyle = this.color;
+            pincel.fillRect(this.inicioX, this.inicioY, this.anchoX, this.altoY);
+            pincel.strokeStyle = "black";
+            pincel.strokeRect(this.inicioX, this.inicioY, this.anchoX, this.altoY);
+        }
+
+    }
+    class Circulo {
+        constructor(x, y, radio, color) {
+            this.x = x;
+            this.y = y;
+            this.radio = radio;
+            this.color = color;
+
+
+        }
+        draw() {
+            pincel.fillStyle = this.color;
+            pincel.beginPath();
+            pincel.arc(this.x, this.y, this.radio, 0, 2 * Math.PI);
+            pincel.fill();
+        }
+    }
+    var liColor = ["red", "blue", "green"];
+    rectangulos = [new Rectangulo(0, 0, 60, 50, liColor[0]), new Rectangulo(60, 0, 60, 50, liColor[1]), new Rectangulo(120, 0, 60, 50, liColor[2])];
+    canvas = document.querySelector("canvas");
+    pincel = canvas.getContext("2d");
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0, 0, 600, 400);
+    var pinta = false;
+    var color="black";
+    for (var x = 0; x < rectangulos.length; rectangulos[x].draw(), x++);
+
+    function traza(evento) {
+        if (pinta && !checkAreaDesignada(evento, new Coordenada(0,0), new Coordenada(186,56))) {
+            var circulo = new Circulo(evento.pageX, evento.pageY, 5, color);
+            circulo.draw();
+        }
+
+    }
+    function checkAreaDesignada(evento, coordenadaI, coordenadaF) {
+        return (evento.pageX > coordenadaI.x && evento.pageX < coordenadaF.x && evento.pageY > coordenadaI.y && evento.pageY < coordenadaF.y);
+        //return ! (evento.pageX > 0 &&   evento.pageX < 186  && evento.pageY > 0 &&   evento.pageY < 56 );  
+    }
+
+   
+
+
+    canvas.addEventListener("mousedown", function (e) {
+        pinta = true;
+        color= checkAreaDesignada(e,rectangulos[0].getCoordenada(1),rectangulos[0].getCoordenada(3))? liColor[0]: color;
+        color= checkAreaDesignada(e,rectangulos[1].getCoordenada(1),rectangulos[1].getCoordenada(3))? liColor[1]: color;
+        color= checkAreaDesignada(e,rectangulos[2].getCoordenada(1),rectangulos[2].getCoordenada(3))? liColor[2]: color;
+    }, 0);
+
+    canvas.addEventListener("mouseup", function (e) {
+        pinta = false;
+
+    }, 0);
+    canvas.addEventListener("mousemove", traza, 0);
+
+
+
+
+</script>
+
+</html>

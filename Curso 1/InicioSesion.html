@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+
+    var inicioDeSesionRegistrado = "alura";
+    var contrasenhaRegistrada = "alura321";
+
+
+    var numeroIntentos = 1;
+    do {
+        var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+        var contrasenhaIngresada = prompt("Ingrese su contraseña");
+        if (inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada) {
+            alert("Bienvenido al sistema " + inicioDeSesionIngresado);
+            numeroIntentos=4;
+        } else {
+            alert("inicio de sesión inválido. Favor intente de nuevo");
+            numeroIntentos++;
+        }
+    } while (numeroIntentos < 3 );
+    if(numeroIntentos==3){
+        alert("ha olvidado su contrase;a");
+    }
+
+</script>
+
+<body>
+
+</body>
+
+</html>

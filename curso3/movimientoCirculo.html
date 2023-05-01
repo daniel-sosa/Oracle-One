@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+   
+<body>
+
+    <canvas height="400" width="600">
+
+    </canvas>
+    
+</body>
+<script>
+    var lienzo= document.querySelector("canvas");
+    var pincel= lienzo.getContext("2d");
+    //fill -> llenar 
+    pincel.fillStyle=  "grey";
+    pincel.fillRect(0,0,600,400);
+
+    
+    var X=30,Y=30;
+    
+
+    function dibujaCirculo(color,radio,x,y){
+         x-= lienzo.offsetLeft,y-=lienzo.offsetTop;
+        pincel.fillStyle= color;
+        pincel.beginPath();
+        pincel.arc(x,y,radio,0,2*Math.PI);
+        pincel.fill();  
+        
+        
+    }
+    addEventListener("keydown",function(evento){
+        
+        if(evento.code=="ArrowDown"){  Y+=10;}
+        if(evento.code=="ArrowUp") {Y-=10;}
+        if(evento.code=="ArrowLeft"){ X-=10;}
+        if(evento.code=="ArrowRight") {X+=10;}
+       
+        });
+    
+
+    function upDateDisplay(){
+        pincel.clearRect(0,0,600,400);
+        pincel.fillStyle= "grey";
+        dibujaCirculo("red",15,X,Y);
+    }
+   setInterval(upDateDisplay,20);
+    
+</script>
+</html>

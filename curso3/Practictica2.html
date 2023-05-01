@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas height="400" width="600"></canvas>
+</body>
+
+<script>
+
+
+
+    // drawCuadrado(0, 0, 50);
+    // drawCuadrado(50, 0, 50);
+
+
+    // function drawCuadrado(x, y, ancho) {
+    //     pincel.fillStyle = "green";
+    //     pincel.fillRect(x, y, ancho, ancho);
+    //     pincel.strokeStyle = "black";
+    //     pincel.strokeRect(x, y, ancho, ancho);
+    // }
+
+
+    class FiguraGeometrica {
+        // var colorContorno = "black";
+        // var colorRelleno = "white";
+        // var posicionIX = 0;
+        // var posicionIY = 0;
+        constructor(colorContorno, colorRelleno, posicionIX, posicionIY) {
+            this.colorContorno = colorContorno;
+            this.colorRelleno = colorRelleno;
+            this.posicionIX = posicionIX;
+            this.posicionIY = posicionIY;
+        }
+    }
+
+    class Rectangulo extends FiguraGeometrica {
+
+
+        constructor(colorContorno, colorRelleno, posicionIX, posicionIY, ancho, alto) {
+            super(colorContorno, colorRelleno, posicionIX, posicionIY);
+            this.colorContorno = colorContorno;
+            this.colorRelleno.colorRelleno;
+            this.posicionIX = posicionIX;
+            this.posicionIY = posicionIY;
+            this.alto = alto;
+            this.ancho = ancho;
+
+        }
+        draw() {
+
+            pincel.fillStyle = this.colorRelleno;
+            pincel.fillRect(this.posicionIX, this.posicionIY, this.ancho, this.alto);
+            pincel.strokeStyle = this.colorContorno;
+            pincel.strokeRect(this.posicionIX, this.posicionIY, this.ancho, this.alto);
+        }
+
+    }
+
+    class Circulo extends FiguraGeometrica {
+
+
+        constructor(colorContorno, colorRelleno, posicionIX, posicionIY, radio) {
+            super(colorContorno, colorRelleno, posicionIX, posicionIY);
+            this.colorContorno = colorContorno;
+            this.colorRelleno.colorRelleno;
+            this.posicionIX = posicionIX;
+            this.posicionIY = posicionIY;
+            this.radio = radio;
+
+        }
+        draw() {
+
+            pincel.fillStyle = this.colorRelleno;
+            pincel.beginPath();
+            pincel.arc(this.posicionIX, this.posicionIY, this.radio, 0, 2 * 3.1416);
+
+            pincel.fill();
+        }
+
+    }
+
+    class Barra extends FiguraGeometrica {
+        constructor(serie, colores, posicionIX, posicionIY, titulo) {
+            super("", "", posicionIX, posicionIY);
+            this.colorContorno = "black";
+            this.colorRelleno = "black";
+            this.posicionIX = posicionIX;
+            this.posicionIY = posicionIY;
+            this.serie = serie;
+            this.colores = colores;
+            this.titulo = titulo;
+            this.ancho = 80;
+
+        }
+        draw() {
+
+             
+
+            const r = new Rectangulo(this.colorContorno, this.colores[0], this.posicionIX, this.posicionIY, this.ancho, this.serie[0]);
+            var i = 1;
+            r.draw();
+            
+            do {
+                
+                r.posicionIY += serie[i-1];
+                r.alto = serie[i];
+                r.colorRelleno = colores[i];
+                i++;
+                r.draw();
+            } while (i <= serie.length);
+
+            pincel.font="15px Georgia";
+            pincel.fillStyle="black";
+            pincel.fillText(this.titulo, this.posicionIX, this.posicionIY-=10);
+        }
+
+
+
+    }
+
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+
+    var serie = [200, 50, 20,47];
+    var colores = ["blue", "red", "yellow","black"];
+
+
+    const r = new Barra(serie, colores, 100, 50, "serie 2019");
+    const r2 = new Barra(serie, colores, 250, 50, "serie 2020");
+    r.draw();
+    r2.draw();
+
+    
+
+
+    // for (let i = 0; i < 600; i += 50) {
+    //     r.posicionIX = +i;
+    //     r.draw();
+    // }
+    //  const circulo= new Circulo("black", "red", 300, 200, 20);
+
+    //  circulo.draw();
+    //  circulo.posicionIX=340;
+    //  circulo.colorRelleno="black";
+    //  circulo.draw();
+    //  circulo.posicionIX=260;
+    //  circulo.colorRelleno="orange";
+    //  circulo.draw();
+
+    //  circulo.posicionIX=300;
+    //  circulo.posicionIY+=40;
+    //  circulo.colorRelleno="blue";
+    //  circulo.draw();
+
+    //  circulo.posicionIX=300;
+    //  circulo.posicionIY-=80;
+    //  circulo.colorRelleno="yellow";
+    //  circulo.draw();
+
+
+
+
+</script>
+
+</html>

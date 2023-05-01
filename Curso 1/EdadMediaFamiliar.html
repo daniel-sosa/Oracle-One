@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var numIntegrantes = parseInt(prompt("Cuantos integrantes en tu familia hay?"));
+    var promedio=0;
+    for(var x=1; x<= numIntegrantes; x++)
+       promedio += parseInt(prompt("Ingresa la edad del integrante numero "+ x));
+    
+
+</script>
+<body>
+    <p id="res"></p>
+    <script>
+        document.getElementById("res").innerHTML= ("La edad promedio de los familiares es =" + (promedio/numIntegrantes));
+    </script>
+</body>
+</html>
