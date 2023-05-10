@@ -1,0 +1,100 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&display=swap');
+body{
+    width: 1080px;
+    background-color: #F2F5FC;
+    font-family: 'Nunito Sans', sans-serif;
+    
+
+}
+main{
+    width: 100%;
+    display: inline-flex;
+    background-color: #F2F5FC;
+}
+.primario{
+background-color: #F2F5FC;
+width: 60%;
+
+}
+.secundario{
+    
+    text-align: center;
+    width: 30%;
+    /* height: 87%; */
+    /* position: absolute;
+    margin-left: 65rem;
+    margin-top: 4rem; */
+    background-color:#ffffff;
+    border-radius: 20px;
+    
+}
+.secundario>p{
+    margin: 1.5rem;
+    text-align: left;
+}
+.secundario>button{
+ position: relative;
+ margin-top: 18rem;
+}
+
+img{
+    position: absolute;
+    margin: 4%;
+    width: 5%;
+}
+.div-botones{
+   background-color: #F2F5FC;
+    text-align: center;
+    margin-left: 10%;
+    margin-top: 1%;
+    width: 80%;
+        
+}
+
+button{
+    
+    width: 40%;
+    height: 2.3rem;
+    font-style: "Nunito Sans";
+    border-radius: 15px;
+    border-color: #7E96B6;
+    margin-right: 5%;
+    
+}
+button:hover{
+    transition: 500ms;
+    transform: scale(1.05);
+    
+}
+
+
+p{
+    text-align: left;
+}
+#mesaje_cifrado{
+    height: 30%;
+    color: #747579;
+}
+textarea{
+    position: relative;
+    margin-top: 15%;
+    margin-left: 25%;
+    background-color: #F2F5FC;    
+    border-color: #F2F5FC;  
+    font-style: "Nunito Sans";
+    font-size: 1.5rem;
+    color: #0B3663;
+    
+    
+}
+textarea:focus, input:focus, input[type]:focus {
+    border-color: #F2F5FC;
+    /* box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(255,144,0,0.6); */
+    outline: 0 none;
+}
+.btnStyle1{
+    background-color: #0B3663;
+    color: #F2F5FC;
+}
